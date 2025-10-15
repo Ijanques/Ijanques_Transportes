@@ -1,0 +1,239 @@
+:root{
+  --bg: #000000;
+  --accent: #ffd000;
+  --muted: #1a1a1a;
+  --white: #ffffff;
+  --max-width: 1100px;
+  --radius: 12px;
+  --gap: 20px;
+  --text-muted: #bdbdbd;
+}
+
+/* Reset simples */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  padding-bottom:60px;
+}
+
+/* Container */
+.container{
+  width:calc(100% - 40px);
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:40px 0;
+}
+
+/* Header */
+.site-header{
+  background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+  border-bottom:4px solid rgba(255,208,0,0.06);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo-area img{
+  height:90px;
+  width:auto;
+  object-fit:contain;
+  display:block;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.8));
+}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  color:var(--white);
+  background:transparent;
+  border:2px solid rgba(255,255,255,0.06);
+  font-weight:600;
+  transition:all .15s ease;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn-cta{
+  background:linear-gradient(90deg,var(--accent), #ffcc00);
+  color:#111;
+  border:0;
+  box-shadow:0 6px 18px rgba(0,0,0,0.6);
+}
+.btn-outline{
+  background:transparent;
+  border:2px solid var(--accent);
+  color:var(--accent);
+}
+.instagram-icon { height: 60px; vertical-align: middle; }
+
+/* Hero */
+.hero{
+  padding:64px 0;
+  text-align:left;
+  background:linear-gradient(180deg, rgba(0,0,0,0.3), transparent 50%);
+}
+.hero-content h1{
+  font-size:48px;
+  letter-spacing:1px;
+  margin-bottom:8px;
+  font-weight:800;
+}
+.tagline{
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:12px;
+}
+.lead{
+  color:var(--text-muted);
+  max-width:720px;
+  margin-bottom:18px;
+}
+.hero-buttons .btn{margin-right:10px}
+
+/* Sections */
+.section{padding:40px 0}
+.section h2{
+  color:var(--accent);
+  font-size:24px;
+  margin-bottom:18px;
+}
+
+/* Cards */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:var(--gap);
+}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--radius);
+  padding:18px;
+  min-height:120px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.6);
+}
+.card h3{color:var(--white);margin-bottom:8px}
+.card p{color:var(--text-muted);font-size:14px}
+
+/* Gallery / Carousel */
+.gallery .carousel{
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+  background:var(--muted);
+  padding:12px 40px;
+}
+.carousel-track{
+  display:flex;
+  gap:12px;
+  transition:transform .45s ease;
+  align-items:center;
+}
+.carousel-item{
+  min-width:100%;
+  flex:0 0 100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.carousel-item img{
+  width:100%;
+  height:380px;
+  object-fit:scale-down;
+  border-radius:8px;
+}
+
+/* Carousel buttons */
+.carousel-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.5);
+  color:var(--white);
+  border:0;
+  padding:12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:20px;
+}
+.carousel-btn.prev{left:8px}
+.carousel-btn.next{right:8px}
+
+/* Map */
+.map-wrapper{
+  height:420px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 6px 20px rgba(0,0,0,0.6);
+}
+.map-wrapper iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+
+/* Contact */
+.contact .large{padding:14px 22px;font-size:18px;border-radius:10px;margin-top:12px}
+.contact-details{margin-top:18px;color:var(--text-muted)}
+
+/* Footer */
+.site-footer{
+  background:#050505;
+  border-top:4px solid rgba(255,208,0,0.06);
+  padding:18px 0;
+  text-align:center;
+  color:var(--text-muted);
+}
+
+/* Floating WhatsApp FAB */
+#whatsapp-fab{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:linear-gradient(90deg,var(--accent), #ffcc00);
+  color:#111;
+  padding:8px 12px;
+  border-radius:28px;
+  text-decoration:none;
+  z-index:60;
+  box-shadow:0 8px 26px rgba(0,0,0,0.5);
+  font-weight:700;
+  font-size:13px;
+  max-height:44px;
+  transition:transform .12s ease;
+}
+#whatsapp-fab svg{width:22px;height:22px;fill:#111}
+#whatsapp-fab span{display:inline-block}
+
+/* Small screens adjustments */
+@media (max-width:900px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .carousel-item img{height:280px}
+  .hero-content h1{font-size:36px}
+  .logo-area img{height:54px}
+}
+@media (max-width:600px){
+  .cards{grid-template-columns:1fr}
+  .header-inner{padding:8px 0}
+  .container{padding:20px}
+  .hero{padding:36px 0}
+  .hero-content h1{font-size:30px}
+  #whatsapp-fab{right:12px;bottom:12px;padding:8px 10px;font-size:12px;gap:8px}
+  #whatsapp-fab span{display:none} /* deixar só o ícone em telas pequenas para não atrapalhar */
+  .carousel-item img{height:220px}
+  .carousel-btn{padding:8px;font-size:16px}
+}
